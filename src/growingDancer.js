@@ -20,8 +20,6 @@ GrowingDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
   var dancer = this;
-  console.log(dancer.$node.css('height'));
-  // console.log(dancer.$node.css('height'));
   if (parseInt(dancer.$node.css('height')) >= 150) {
     dancer.growing = false;
   } else if (parseInt(dancer.$node.css('height')) <= 50) {
