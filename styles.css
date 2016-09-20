@@ -25,3 +25,18 @@ body, a:link, a:visited, a:active{
   border-radius:10px;
   position:absolute;
 }
+
+.minion {
+  border:100px solid yellow;
+  border-radius:10px;
+  position:absolute;
+}
+
+.growing {
+  border: none;
+  height: 100px;
+  width: 100px;
+  background-color: green;
+  border-radius:10px;
+  position:absolute;
+}
