@@ -40,7 +40,6 @@ $(document).ready(function() {
     window.dancers.push(dancer);
 
     $('body').append(dancer.$node);
-
   });
 
   $('.lineUpButton').on('click', function(event) {
@@ -48,5 +47,10 @@ $(document).ready(function() {
       dancer.lineUp();
     });
   });
+
+  $('.minion').on('mouseover', function(event) {
+    
+  });
+
 });
 
