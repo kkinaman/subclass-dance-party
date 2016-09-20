@@ -26,7 +26,7 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 1000 + 100
+      Math.random() * 1000
     );
 
     if ($(this).hasClass('minionButton')) {
