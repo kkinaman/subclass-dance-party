@@ -27,10 +27,12 @@ MinionDancer.prototype.step = function() {
   } else {
     var newY = this.linedUpPos;
   }
+
   this.$node.animate({
     left: newX,
     top: newY,
   }, this.timeBetweenSteps);
+
 };
 
 MinionDancer.prototype.lineUp = function() {

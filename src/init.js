@@ -52,6 +52,55 @@ $(document).ready(function() {
     });
   });
 
+  $('.pairUpButton').on('click', function(event) {
+    
+    //Make new array of dancers by mapping dancers array --> [[dancer, false], [dancer, false], ...]
+    var dancers = window.dancers.map(function(dancer) {
+      return [dancer, false];
+    });
+    //For each dancer
+    for (var i = 0; i < dancers.length; i++) {
+      var curDancer = dancers[i];
+      //If not already paired
+      if (!curDancer[1]) {
+      /** Find closest pair **/
+        // Store coords
+        var top = curDancer[0].getTop(); 
+        var left = curDancer[0].getLeft();
+        // Store minDistance as infinity
+        var minDistance = Infinity;
+        // Make closestDancer variable
+        var closestDancer = null;
+        var closestIndex;
+        // For each dancer
+        for (var j = 0; j < dancers.length; j++) {
+          var comparisonDancer = dancers[j];
+          // If not itself
+          if (i !== j && !comparisonDancer[1]) {
+            // Calculate distance away from curDancer
+            var thisDistance = curDancer[0].distance(comparisonDancer[0]);
+            // If thisDistance is less than minDistance
+            if (thisDistance < minDistance) {
+              // Update minDistance
+              minDistance = thisDistance;
+              // Store as closestDancer
+              closestDancer = comparisonDancer;
+              // Store its index
+              closestIndex = j;
+            }
+          }
+        }
+        if (closestDancer !== null) {
+          // Set coords of closestDancer to somewhere near curDancer
+          closestDancer[0].setPosition(top, left + 20);
+          // Set paired to true for curDancer and closestDancer
+          closestDancer[1] = true;
+        }
+        curDancer[1] = true;
+      }
+    }
+  });
+
   $(document).on('mouseover', '.dancer', function() {
     $(this).effect('bounce');
   });

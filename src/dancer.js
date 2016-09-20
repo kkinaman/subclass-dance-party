@@ -24,6 +24,7 @@ Dancer.prototype.step = function() {
   setTimeout(function() {
     dancer.step.call(dancer);
   }, time);
+
 };
 
 Dancer.prototype.setPosition = function(top, left) {
@@ -40,5 +41,23 @@ Dancer.prototype.setPosition = function(top, left) {
 Dancer.prototype.lineUp = function() {
   var left = $('body').width() * Math.random();
   this.setPosition(this.linedUpPos, left);
+};
+
+Dancer.prototype.getTop = function () {
+  return parseInt(this.$node.css('top'));
+};
+
+Dancer.prototype.getLeft = function () {
+  return parseInt(this.$node.css('left'));
+};
+
+Dancer.prototype.distance = function(otherDancer) {
+  var x1 = this.getLeft();
+  var y1 = this.getTop();
+
+  var x2 = otherDancer.getLeft();
+  var y2 = otherDancer.getTop();
+
+  return Math.sqrt(Math.pow((y2 - y1), 2) + Math.pow((x2 - x1), 2));
 };
 
