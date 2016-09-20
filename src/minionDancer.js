@@ -29,9 +29,9 @@ MinionDancer.prototype.step = function() {
     var newY = this.linedUpPos;
   }
   this.$node.animate({
-      left: newX,
-      top: newY,
-    }, this.timeBetweenSteps);
+    left: newX,
+    top: newY,
+  }, this.timeBetweenSteps);
 };
 
 MinionDancer.prototype.lineUp = function() {

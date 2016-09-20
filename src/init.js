@@ -33,6 +33,10 @@ $(document).ready(function() {
       dancer.$node.addClass('minion');
     }
 
+    if ($(this).hasClass('blinkyButton')) {
+      dancer.$node.addClass('blinky');
+    }
+
     if ($(this).hasClass('growingButton')) {
       dancer.$node.addClass('growing');
     }
@@ -48,8 +52,23 @@ $(document).ready(function() {
     });
   });
 
-  $('.minion').on('mouseover', function(event) {
-    
+  // $('.minion').on('click', function(event) {
+  //   $('.minion').effect('explode');
+  // });
+
+  // $('.minion').on('mouseover', function (event) {
+  //   console.log ('hey');
+  // });
+
+  // $('span').on('click', function(event) {
+  //   $('span').effect('explode');
+  // });
+
+  $(document).on('mouseover', '.dancer', function() {
+    console.log('exploding');
+    // console.log($(this));
+    $(this).effect('bounce');
+    // $(this).remove();
   });
 
 });
