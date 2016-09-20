@@ -52,23 +52,8 @@ $(document).ready(function() {
     });
   });
 
-  // $('.minion').on('click', function(event) {
-  //   $('.minion').effect('explode');
-  // });
-
-  // $('.minion').on('mouseover', function (event) {
-  //   console.log ('hey');
-  // });
-
-  // $('span').on('click', function(event) {
-  //   $('span').effect('explode');
-  // });
-
   $(document).on('mouseover', '.dancer', function() {
-    console.log('exploding');
-    // console.log($(this));
     $(this).effect('bounce');
-    // $(this).remove();
   });
 
 });
