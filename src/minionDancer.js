@@ -15,6 +15,7 @@ MinionDancer.prototype.oldStep = function() {
 };
 
 MinionDancer.prototype.step = function() {
+  console.log('stepping');
   // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
 
@@ -22,7 +23,6 @@ MinionDancer.prototype.step = function() {
   var newY = $('body').height() * Math.random();
 
   this.$node.animate({
-    opacity: 0.25,
     left: newX,
     top: newY,
   }, 2000);

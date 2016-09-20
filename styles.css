@@ -27,8 +27,12 @@ body, a:link, a:visited, a:active{
 }
 
 .minion {
-  border:100px solid yellow;
-  border-radius:10px;
+  border: none;
+  background-image: url("images/minion.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100px;
+  width: 100px;
   position:absolute;
 }
 
@@ -37,6 +41,5 @@ body, a:link, a:visited, a:active{
   height: 100px;
   width: 100px;
   background-color: green;
-  border-radius:10px;
   position:absolute;
 }

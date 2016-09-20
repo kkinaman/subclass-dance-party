@@ -36,3 +36,8 @@ Dancer.prototype.setPosition = function(top, left) {
   this.$node.css(styleSettings);
 };
 
+Dancer.prototype.lineUp = function() {
+  var left = $('body').width() * Math.random();
+  this.setPosition(100, left);
+};
+

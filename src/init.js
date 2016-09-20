@@ -26,7 +26,7 @@ $(document).ready(function() {
     var dancer = new dancerMakerFunction(
       $('body').height() * Math.random(),
       $('body').width() * Math.random(),
-      Math.random() * 1000
+      Math.random() * 1000 + 100
     );
 
     if ($(this).hasClass('minionButton')) {
@@ -37,7 +37,16 @@ $(document).ready(function() {
       dancer.$node.addClass('growing');
     }
 
+    window.dancers.push(dancer);
+
     $('body').append(dancer.$node);
+
+  });
+
+  $('.lineUpButton').on('click', function(event) {
+    window.dancers.forEach(function(dancer) {
+      dancer.lineUp();
+    });
   });
 });
 

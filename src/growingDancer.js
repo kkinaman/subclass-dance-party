@@ -19,17 +19,17 @@ GrowingDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
   var dancer = this;
-
+  // console.log(dancer.$node.css('height'));
+  if (dancer.$node.css('height') >= '500px') {
+    dancer.growing = false;
+  }
   if (dancer.growing) {
     dancer.$node.animate({
       height: '+=30px',
       width: '+=30px'
     }, 100, function() {
-      if (dancer.$node.css('height') >= '400px') {
-        dancer.growing = false;
-      }
     });
-    console.log(dancer.$node.css('height'));
+    
     
   } else {
     dancer.$node.animate({
