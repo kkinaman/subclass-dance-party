@@ -13,6 +13,7 @@ var Dancer = function(top, left, timeBetweenSteps) {
   // this one sets the position to some random default point within the body
   this.setPosition(top, left);
   this.lineUpPos = 800;
+  this.paired = false;
 };
 
 

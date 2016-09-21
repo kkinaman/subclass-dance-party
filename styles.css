@@ -29,20 +29,35 @@ body, a:link, a:visited, a:active{
   position:absolute;
 }
 
-.minion {
+.blinky {
   border: none;
-  background-image: url("images/minion.png");
+  background-image: url("images/disco.gif");
   background-repeat: no-repeat;
   background-position: center;
-  height: 100px;
-  width: 100px;
+  background-size: contain;
+  height: 75px;
+  width: 75px;
+}
+
+.minion {
+  border: none;
+  background-image: url("images/dancing_minion.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  width: 150px;
   position:absolute;
 }
 
 .growing {
   border: none;
+  background-image: url("images/heart.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   height: 100px;
   width: 100px;
-  background-color: green;
+  /*background-color: green;*/
   position:absolute;
 }

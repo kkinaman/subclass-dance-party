@@ -20,19 +20,20 @@ MinionDancer.prototype.step = function() {
   // call the old version of step at the beginning of any call to this new version of step
   this.oldStep();
 
-  var newX = $('body').width() * Math.random();
+  if (!this.paired) {
+    var newX = $('body').width() * Math.random();
 
-  if (!this.linedUp) {
-    var newY = $('body').height() * Math.random();    
-  } else {
-    var newY = this.lineUpPos;
+    if (!this.linedUp) {
+      var newY = $('body').height() * Math.random();    
+    } else {
+      var newY = this.lineUpPos;
+    }
+
+    this.$node.animate({
+      left: newX,
+      top: newY,
+    }, this.timeBetweenSteps);
   }
-
-  this.$node.animate({
-    left: newX,
-    top: newY,
-  }, this.timeBetweenSteps);
-
 };
 
 MinionDancer.prototype.lineUp = function() {

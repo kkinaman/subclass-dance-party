@@ -52,9 +52,7 @@ $(document).ready(function() {
     });
   });
 
-  $('.pairUpButton').on('click', function pairUp(event) {
-    console.log('button click registered');
-    
+  $('.pairUpButton').on('click', function pairUp(event) {    
     //Make new array of dancers by mapping dancers array --> [[dancer, false], [dancer, false], ...]
     var dancers = window.dancers.map(function(dancer) {
       return [dancer, false];
@@ -62,6 +60,7 @@ $(document).ready(function() {
     //For each dancer
     for (var i = 0; i < dancers.length; i++) {
       var curDancer = dancers[i];
+      curDancer.paired = true;
       //If not already paired
       if (!curDancer[1]) {
       /** Find closest pair **/
@@ -93,7 +92,7 @@ $(document).ready(function() {
         }
         if (closestDancer !== null) {
           // Set coords of closestDancer to somewhere near curDancer
-          closestDancer[0].setPosition(top, left + 20);
+          closestDancer[0].setPosition(top, left + 50);
           // Set paired to true for curDancer and closestDancer
           closestDancer[1] = true;
         }
@@ -104,6 +103,10 @@ $(document).ready(function() {
 
   $(document).on('mouseover', '.dancer', function() {
     $(this).effect('bounce');
+  });
+
+  $(document).on('click', '.minion', function() {
+    $('.minionLaugh')[0].play();
   });
 
 });
