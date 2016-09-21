@@ -30,5 +30,25 @@ describe('blinkyDancer', function() {
       clock.tick(timeBetweenSteps);
       expect(blinkyDancer.step.callCount).to.be.equal(2);
     });
+
+
   });
+
+  describe('line up', function() {
+    it('should line up dancer to pre-defined y cordinate when lineup button is clicked', function() {
+      blinkyDancer.lineUp();
+      expect(blinkyDancer.getTop()).to.be.equal(blinkyDancer.lineUpPos);
+    });
+  });
+
+  describe('pair up', function() {
+    it('should have same y cordinates after pair button clicked', function() {
+      var blinky1 = new BlinkyDancer(100, 10, timeBetweenSteps);
+      var blinky2 = new BlinkyDancer(10, 40, timeBetweenSteps);
+      $('.body').append('<div class="pairUpButton"></div>');
+      $('.pairUpButton').trigger('click');
+      expect(blinky1.getTop()).to.be.equal(blinky2.getTop());
+    });
+  });
+
 });

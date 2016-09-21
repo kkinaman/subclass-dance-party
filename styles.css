@@ -2,6 +2,9 @@ body, html{
   height:100%;
 }
 body{
+  background-image: url("http://img1.wikia.nocookie.net/__cb20140208181945/despicableme/images/b/b7/Gru's_Lab_Minion_Mayhem_ride.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
   margin: 0px;
   background-color:#444;
   font-size: 18px;

@@ -25,7 +25,7 @@ MinionDancer.prototype.step = function() {
   if (!this.linedUp) {
     var newY = $('body').height() * Math.random();    
   } else {
-    var newY = this.linedUpPos;
+    var newY = this.lineUpPos;
   }
 
   this.$node.animate({

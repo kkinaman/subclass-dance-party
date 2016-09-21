@@ -52,7 +52,8 @@ $(document).ready(function() {
     });
   });
 
-  $('.pairUpButton').on('click', function(event) {
+  $('.pairUpButton').on('click', function pairUp(event) {
+    console.log('button click registered');
     
     //Make new array of dancers by mapping dancers array --> [[dancer, false], [dancer, false], ...]
     var dancers = window.dancers.map(function(dancer) {
